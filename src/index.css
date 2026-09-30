@@ -2757,3 +2757,22 @@ h1[tabindex],main:focus {
   .filter-tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:4px; }
   .filter-tabs button { min-height:43px; }
 }
+
+/* Three doors: keep the initial choice visible through the reveal. */
+.monty-doors { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:24px 0; }
+.monty-door { display:flex; flex-direction:column; align-items:center; justify-content:space-between; gap:20px; min-height:190px; padding:20px 8px; border:2px solid #a79272; border-radius:52px 52px 6px 6px; background:repeating-linear-gradient(90deg,#e3dbc5 0px,#e3dbc5 20px,#dcd2b9 21px); color:#615841; transition:background .25s,border-color .25s; }
+.monty-door b { font:42px/1.2 "Songti SC",serif; }
+.monty-door span,.monty-door small { font-size:12px; }
+.monty-door:disabled { opacity:1; cursor:default; }
+.monty-door.is-picked { border-color:#a64f31; box-shadow:0 0 0 3px #a64f3120; }
+.monty-door.is-open { background:#eae8de; }
+.monty-door.has-prize { background:#e1e6ce; color:#425838; border-color:#61784d; }
+.monty-history,.monty-lab { border-top:1px solid var(--line); margin-top:28px; padding-top:20px; }
+.monty-history > div { display:flex; flex-wrap:wrap; gap:7px; }
+.monty-history span { font-size:11px; padding:7px 10px; background:#eae8de; border-radius:3px; }
+.monty-stat { margin:18px 0; }
+.monty-stat > div { display:flex; justify-content:space-between; gap:8px; font-size:12px; }
+.monty-stat meter { width:100%; height:22px; accent-color:#61784d; }
+.monty-art i { font:30px "Songti SC",serif; font-style:normal; padding:25px 16px; border:1px solid #a79272; border-radius:30px 30px 0 0; background:#e3dbc5; }
+.monty-art i:nth-child(2) { background:transparent; opacity:.55; }
+@media(max-width:480px) { .monty-doors { gap:7px; } .monty-door { min-height:155px; padding:16px 4px; } .monty-door b { font-size:34px; } .monty-door small { font-size:10px; } }

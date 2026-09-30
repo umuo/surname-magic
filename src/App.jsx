@@ -30,7 +30,8 @@ function Artwork({
     {id === 'kruskal' && <div className="advanced-art route-art"><span>↘</span><b>∞</b><span>↙</span><small>不同起点 · 可能相同的终点</small></div>}
     {id === 'blessing' && <div className="advanced-art story-art"><b>局</b><small>看清来路，识破迷局</small></div>}
     {id === 'square' && <div className="calendar-art"><span>EVERY LINE · SAME SUM</span><div>{[16,2,3,5,11,10,9,7,6].map(n=><b key={n}>{n}</b>)}</div></div>}
-    <span className="art-index">{TRICKS.find(trick => trick.id === id)?.number} / 十二则奇谈</span>
+    {id === 'monty' && <div className="advanced-art monty-art"><i>壹</i><i>空</i><i>叁</i><small>留下，还是换一扇？</small></div>}
+    <span className="art-index">{TRICKS.find(trick => trick.id === id)?.number} / {TRICKS.length} 则奇谈</span>
   </div>;
 }
 function Home({

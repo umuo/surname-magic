@@ -77,7 +77,8 @@ TRICKS.push(
   { id: 'fivecards', number: '09', category: 'math', title: '四张明牌，一封密信', subtitle: '五张牌传心术', description: '任选五张牌，藏起其中一张。只看另外四张，就能读出隐藏答案。', principle: '排列编码', time: '约 3 分钟', theme: 'ink', intro: '你决定五张牌，助手决定藏起哪一张并排列余下四张。随后挑战自己成为编码者。' },
   { id: 'kruskal', number: '10', category: 'math', title: '不同的路，同一张终点', subtitle: '克鲁斯卡尔数牌', description: '选个起点，按牌面向前走。两条陌生的路线，可能在途中相遇。', principle: '随机路径汇合', time: '约 2 分钟', theme: 'sage', intro: 'A 算 1，J、Q、K 算 5，其余按点数。从前十张中选一个起点，走到下一跳越界为止。' },
   { id: 'blessing', number: '11', category: 'story', title: '陌生人为何知道你的家事', subtitle: '祈福消灾局', description: '街头偶遇、神秘高人、步步催促。你会在哪一步停下来核实？', principle: '信息串通与恐惧施压', time: '约 3 分钟', theme: 'ochre', intro: '根据警方警示改编的虚构分支故事。站在当事人一侧作选择，最后拆解人物关系与信息来源。' },
-  { id: 'square', number: '12', category: 'math', title: '横竖斜看，都是你的数字', subtitle: '指定数字幻方', description: '报出一个数，十条线都得到同一个和。逐条检查，再亲手拆掉机关。', principle: '幻方与等量调整', time: '约 2 分钟', theme: 'olive', intro: '输入 34～999 的整数，生成 4 × 4 幻方。点击行、列或对角线验证，再查看结构。' }
+  { id: 'square', number: '12', category: 'math', title: '横竖斜看，都是你的数字', subtitle: '指定数字幻方', description: '报出一个数，十条线都得到同一个和。逐条检查，再亲手拆掉机关。', principle: '幻方与等量调整', time: '约 2 分钟', theme: 'olive', intro: '输入 34～999 的整数，生成 4 × 4 幻方。点击行、列或对角线验证，再查看结构。' },
+  { id: 'monty', number: '13', category: 'math', title: '最后两扇门，真是五五开吗', subtitle: '三门换奖局', description: '先选一扇门，再看主持人揭开空门。坚持还是换门？用一千局实验检验直觉。', principle: '条件概率', time: '约 2 分钟', theme: 'rust', intro: '经典三门问题的互动改编。体验选择、揭晓与策略对照，拆解“剩下两个选项就各占一半”的直觉。' }
 );
 export const CATEGORIES = { math: '数学规律', mind: '心理话术', story: '骗局档案' };
 export const BARNUM_LINES = [{
