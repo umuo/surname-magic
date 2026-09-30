@@ -1,33 +1,59 @@
-# 姓氏秘语
+# 破相 · 民俗骗术揭秘互动馆
 
-基于 React、Vite 和 Framer Motion 的百家姓卡牌小游戏。通过七次选择猜出心中的姓氏，支持手机布局、姓氏查询、回退修改和减少动态效果偏好。
+一个先体验、再揭秘的互动科普网站。将常见的“读心”“神算”拆解为可验证的数学规律与心理话术，保留好奇，也保留判断力。
 
-## 本地开发
+## 十二种互动体验
+
+- **百家姓读心术**：七张牌猜 127 个姓氏，支持搜索、回退与二进制编码演示。
+- **九的倍数读心术**：生成完整 00–99 符号表，揭秘代数规律；每次重玩更换目标符号。
+- **21 张扑克牌找牌**：真实分列、收牌，三轮后定位第 11 张；支持回退。
+- **日历九宫格速算**：真实月份、边界检查，点击中心选择九格，验证总和等于中心乘 9。
+- **巴纳姆效应**：阅读统一描述、评分，再逐句拆解模糊话术；并非心理测评。
+- **颜色与工具猜测**：预先固定“红色的锤子”，如实保留未命中的结果，不夸大命中率。
+
+- **魔术师的选择**：两轮自由触碰，回放主持人如何改变“保留 / 排除”的解释。
+- **选择盲视实验**：三轮纹样选择，允许指出调换，结束后对照实际选择、展示结果和理由。
+- **五张牌传心术**：随机或手选五张牌，通过四张明牌独立解码，并挑战六种排列编码。
+- **克鲁斯卡尔数牌**：沿真实牌序逐步移动，展示十条路线汇合图，如实保留未命中结果。
+- **祈福骗局档案**：四幕分支故事，可随时退出，回看信息如何被同伙利用及独立核实的机会。
+- **指定数字幻方**：输入 34～999，逐条验证十条线同和，拆解基础幻方与四个调整格。
+
+每项均有独立的“亲自体验”和“揭开原理”页面。支持分类筛选、手机布局、浏览器前进后退、键盘操作及减少动态效果偏好。揭秘阅读标记保存在本机 localStorage，游戏答案不发送到服务器。
+
+## 开发与验证
 
 需要 Node.js 22 和 npm。
 
 ```sh
 npm ci
 npm run dev
-```
-
-## 构建
-
-```sh
+npm test
 npm run build
 npm run preview
 ```
 
-默认资源路径为 `/`。部署到子目录时设置 `VITE_BASE_PATH`：
+测试涵盖全部 127 个姓氏、10–99 的符号映射、全部 21 张牌的收敛结果，以及包含闰年的 108 个月日历边界。新增测试覆盖选择话术的全部路线、10,000 组五牌编解码、全部花色点数的循环距离、100 副牌的数牌路线，以及 34～999 每个目标总和的全部十条线。
+
+## 项目结构
+
+- `src/App.jsx`：档案馆、分类筛选、哈希路由和详情页。
+- `src/games.jsx`、`src/advancedGames.jsx`：十二种互动体验。
+- `src/Explanations.jsx`、`src/advancedExplanations.jsx`：原理说明、互动验证与参考来源。
+- `src/logic.js`、`src/advancedLogic.js`：可独立测试的数学与牌序逻辑。
+- `src/tricks.js`：档案信息与巴纳姆示例文本。
+- `src/components/Common.jsx`：共享组件与点击保护。
+- `tests/logic.test.js`、`tests/advanced.test.js`：算法与边界验证。
+
+## GitHub Pages
+
+预期站点地址：https://umuo.github.io/surname-magic/
+
+在仓库 Settings → Pages 中将 Source 设为 **GitHub Actions**，并在 `github-pages` 环境部署规则中允许 `main`。
+
+推送 `main` 后，`.github/workflows/deploy-pages.yml` 安装依赖、运行测试、构建并部署 `dist`。也可在 Actions 中手动运行。默认本地资源路径为 `/`，工作流设置 `VITE_BASE_PATH=/surname-magic/` 以适配子目录。
 
 ```sh
 VITE_BASE_PATH=/surname-magic/ npm run build
 ```
 
-## GitHub Pages
-
-站点地址：https://umuo.github.io/surname-magic/
-
-在仓库 Settings → Pages → Build and deployment 中，将 Source 设为 **GitHub Actions**。
-
-推送到 `main` 后，`.github/workflows/deploy-pages.yml` 自动安装依赖、构建并部署 `dist`。也可在 Actions 中手动运行工作流。构建产物和本地截图不提交到仓库。
+构建产物、依赖和本地截图不提交到仓库。使用哈希路由，直接打开某个体验页不需要服务器重写配置。
